@@ -7,3 +7,11 @@ config.log
 runtests_config.sh
 ori_test_results.txt
 tempdir
+/*-stamp
+/debian/debhelper.log
+/debian/ori/
+/debian/files
+/debian/substvars
+/debian/tmp/
+/debian/*.debhelper.log
+/debian/ori.substvars

@@ -1,0 +1,21 @@
+Source: ori
+Section: utils
+Priority: extra
+Maintainer: ???
+Build-Depends:  debhelper (>=9), scons (>= 2.0), pkg-config,
+ libssl-dev, libboost-dev, libevent-dev (>= 2.0), libfuse-dev (>=2.6), liblzma-dev, libxml2-dev,
+ libavahi-compat-libdnssd-dev, uuid-dev, libcurl4-openssl-dev
+
+Package: ori
+Architecture: any
+Depends: libevent-2.0-5, libevent-openssl-2.0-5, libevent-pthreads-2.0-5, libevent-extra-2.0-5,
+ libfuse2, liblzma5, libxml2, libavahi-compat-libdnssd1, uuid-runtime, libcurl3
+Provides: ori
+Description: a distributed file system inspired by version control systems
+ *** Unofficial package ***
+ .
+ Ori is a distributed file system built for offline operation and control
+ over synchronization operations and conflict resolution. It provides
+ history through lightweight snapshots and allow users to verify the
+ history has not been tampered with.  Through the use of replication,
+ instances can be resilient and recover damaged data from other nodes.

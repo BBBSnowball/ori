@@ -360,13 +360,18 @@ SConscript('libori/SConscript', variant_dir='build/libori')
 SConscript('liboriutil/SConscript', variant_dir='build/liboriutil')
 
 # Ori Utilities
+print("WITH_FUSE: %r" % (env["WITH_FUSE"],))
+print("BUILD_BINARIES: %r" % (env["BUILD_BINARIES"],))
 if env["BUILD_BINARIES"] == "1":
+    print("x")
     SConscript('ori/SConscript', variant_dir='build/ori')
     SConscript('oridbg/SConscript', variant_dir='build/oridbg')
     SConscript('orisync/SConscript', variant_dir='build/orisync')
+    print("y")
     if env["WITH_LIBS3"] == "1":
         SConscript('oris3/SConscript', variant_dir='build/oris3')
     if env["WITH_FUSE"] == "1":
+        print "blub"
         SConscript('orifs/SConscript', variant_dir='build/orifs')
     if env["WITH_HTTPD"] == "1":
         SConscript('ori_httpd/SConscript', variant_dir='build/ori_httpd')
@@ -387,7 +392,8 @@ if env["WITH_ORILOCAL"] == "1":
     env.Install('$PREFIX/bin','build/orilocal/orilocal')
 
 env.Install('$PREFIX/share/man/man1','docs/ori.1')
-env.Install('$PREFIX/share/man/man1','docs/orifs.1')
+if env["WITH_FUSE"] == "1":
+    env.Install('$PREFIX/share/man/man1','docs/orifs.1')
 env.Install('$PREFIX/share/man/man1','docs/orisync.1')
 env.Install('$PREFIX/share/man/man1','docs/oridbg.1')
 
