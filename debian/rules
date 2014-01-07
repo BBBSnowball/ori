@@ -24,7 +24,8 @@ configure-stamp:
 	echo 'WITH_ORILOCAL="1"'  >>Local.sc
 	echo 'WITH_MDNS="1"'      >>Local.sc
 	echo 'USE_FAKES3="1"'     >>Local.sc
-	echo 'WITH_LIBS3="1"'     >>Local.sc
+	# disable libs3 because it doesn't work for me
+	echo 'WITH_LIBS3="0"'     >>Local.sc
 	echo 'BUILD_BINARIES="1"' >>Local.sc
 
 	echo 'PREFIX="'"$(CURDIR)"'/debian/ori"' >>Local.sc
